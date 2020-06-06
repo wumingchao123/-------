@@ -33,10 +33,14 @@ $(function(){
                 data:data,
                 success:function(res){
 
-                    alert(res.message);
+                    layer.msg(res.message);
+
                     if(res.status == 0) {
 
-                        $('#register').hide().siblings('#login').show();
+                        var timer = setInterval(function(){
+                            $('#register').hide().siblings('#login').show();
+                            clearInterval(timer);
+                        },1000)
                     }
 
                 }
@@ -45,8 +49,8 @@ $(function(){
 
         } 
 
-//---------------------登录功能------------
-        
+
+
       
       
 
@@ -91,4 +95,40 @@ $(function(){
     })
 
 
+    //---------------------登录功能------------
+
+    $('#login button').on('click',function(e){
+
+        e.preventDefault();
+      var lusername  = $('.l-username').val().trim();
+      var lpassword = $('.l-password').val().trim();
+      if(lusername && lpassword){
+
+        $.ajax({
+            type:'POST',
+            url:'http://www.liulongbin.top:3007/api/login',
+            data:$('#f-one').serialize(),
+            success:function(res){
+
+                // alert(res.message);
+                layer.msg(res.message);
+               if(res.status === 0){
+                var timer =  setInterval(function(){
+                    location.href = '/index.html'
+                    clearInterval(timer);
+                },1000)
+               }
+
+            }
+
+
+        })
+
+
+      }
+
+
+
+
+    })
 })

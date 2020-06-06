@@ -1,0 +1,76 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background:url('/assets/images/login_bg.jpg') no-repeat;
+    background-size: cover;
+}
+
+/* logo区 */
+
+#logo {
+    margin: 10px 0 0 110px;
+}
+
+
+/* 注册和注册 */
+#login,
+#register {
+    background: #fff;
+    height: 310px;
+    width: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+}
+#register {
+    height: 350px;
+}
+/* 默认注册的盒子隐藏 */
+#register {
+    display: none;
+}
+
+.title {
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    position: relative;
+
+}
+.title img {
+   position: absolute;
+   top: -100px;
+   left: 50px;
+}
+form {
+    padding:0 30px;
+}
+
+.fl {
+
+    float:right;
+}
+.fl a {
+    color:skyblue;
+}
+
+
+.layui-form-item {
+    position: relative;
+    text-align: center;
+}
+
+.layui-icon {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+}
+.layui-input {
+    padding-left: 30px;
+}

@@ -36,7 +36,9 @@ $(function(){
                     layer.msg(res.message);
 
                     if(res.status == 0) {
-
+                        // 保存token
+                       
+                        
                         var timer = setInterval(function(){
                             $('#register').hide().siblings('#login').show();
                             clearInterval(timer);
@@ -112,11 +114,16 @@ $(function(){
 
                 // alert(res.message);
                 layer.msg(res.message);
+                
+                
                if(res.status === 0){
-                var timer =  setInterval(function(){
+                
+                    // 保存token
+                    localStorage.setItem('token',res.token);
+                    // 跳转页面
                     location.href = '/index.html'
-                    clearInterval(timer);
-                },1000)
+                   
+                
                }
 
             }
